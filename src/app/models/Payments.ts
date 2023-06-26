@@ -1,4 +1,4 @@
-export interface IPayments {
+export interface Payments {
   id: string;
   username: string;
   firstName: string;

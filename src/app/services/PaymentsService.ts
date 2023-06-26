@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, firstValueFrom, lastValueFrom } from 'rxjs';
 import { API_PATH } from 'src/environments/environment';
-import { IPayments } from '../interfaces/IPayments';
+import { Payments } from '../models/Payments';
 
 type Payment = {
   id: string;
@@ -17,7 +17,7 @@ export class PaymentsService {
   public async obterTodos() {
     try {
       const payments = await lastValueFrom(
-        this._httpClient.get<IPayments[]>(`${API_PATH}payments`)
+        this._httpClient.get<Payments[]>(`${API_PATH}payments`)
       );
     } catch {
       alert('Erro ao buscar pagamentos');
