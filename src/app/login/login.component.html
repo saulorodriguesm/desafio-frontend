@@ -1,0 +1,21 @@
+<div class="login-container">
+  <form
+    class="form-container"
+    [formGroup]="loginForm"
+    (ngSubmit)="handleLogin()"
+  >
+    <div class="form-container_input">
+      <input placeholder="Digite seu usuario" formControlName="username" />
+    </div>
+    <div class="form-container_input">
+      <input
+        placeholder="Digite sua senha"
+        formControlName="password"
+        type="password"
+      />
+    </div>
+    <div class="form-container_button">
+      <button type="submit">Acessar</button>
+    </div>
+  </form>
+</div>
