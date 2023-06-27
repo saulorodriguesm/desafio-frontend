@@ -19,7 +19,6 @@ export class PaymentsComponent implements OnInit {
     public dialog: MatDialog
   ) {
     this._paymentService.getPayments().subscribe((data) => {
-      console.log(data);
       this.payments = data;
     });
   }
@@ -38,7 +37,6 @@ export class PaymentsComponent implements OnInit {
     this.openDialog(payment);
     if (this.payments.map((p) => p.id).includes(payment.id)) {
       this._paymentService.updatePayment(payment).subscribe((data) => {
-        console.log(data);
         const index = this.payments.findIndex((p) => p.id === data.id);
         this.table.renderRows();
       });

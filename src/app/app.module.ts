@@ -15,6 +15,8 @@ import { DialogComponent } from './shared/dialog/dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { SessionGuard } from './guards/session.guard';
+import { AuthService } from './services/AuthService';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AuthService, SessionGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
