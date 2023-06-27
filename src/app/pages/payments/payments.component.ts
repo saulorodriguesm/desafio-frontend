@@ -22,10 +22,7 @@ export class PaymentsComponent implements OnInit {
     public dialog: MatDialog,
     public router: Router
   ) {
-    this._paymentService.getPayments().subscribe((data) => {
-      console.log('oi',data)
-      this.payments = data;
-    });
+    this.getPayments();
   }
 
   payments: Payments[] = [
@@ -36,6 +33,13 @@ export class PaymentsComponent implements OnInit {
       value: 3,
       isPayed: true,
     },
+    {
+      id: '',
+      username: 'isalabi',
+      title: 'nutricionista',
+      value: 7,
+      isPayed: true,
+    }
   ];
   displayedColumns: string[] = [
     'username',
@@ -49,6 +53,11 @@ export class PaymentsComponent implements OnInit {
   logout() {
     this._authService.Logout();
     this.router.navigate(['/login']);
+  }
+  getPayments(): void {
+    this._paymentService
+      .getAll()
+      .subscribe((payments) => (this.payments = payments));
   }
   updatePayment(payment: Payments) {
     this.openDialog(payment);

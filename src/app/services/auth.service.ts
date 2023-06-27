@@ -19,17 +19,17 @@ export class AuthService {
           }
         )
       );
-      localStorage.setItem('@app/access_token', access_token);
+      localStorage.setItem('Authorization', 'Bearer ' + access_token);
     } catch {
       alert('Ocorreu um erro na chamada da API');
     }
   }
 
   public Logout() {
-    localStorage.removeItem('@app/access_token');
+    localStorage.removeItem('Authorization');
   }
 
   public GetAccessToken() {
-    return localStorage.getItem('@app/access_token');
+    return localStorage.getItem('Authorization');
   }
 }

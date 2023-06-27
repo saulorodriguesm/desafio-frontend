@@ -1,8 +1,10 @@
-<header class="header">
-  <div class="header-container">
-    <div class="header-container_welcome">Bem-vindo ao dashboard</div>
-    <div>
-      <button class="header-container_logout" (click)="logout()">Sair</button>
+<header>
+  <div class="header">
+    <div class="header-container">
+      <div class="header-container_welcome">Bem-vindo ao dashboard</div>
+      <div>
+        <button class="header-container_logout" (click)="logout()">Sair</button>
+      </div>
     </div>
   </div>
 </header>
@@ -44,17 +46,13 @@
     <ng-container matColumnDef="actions">
       <th class="table-header" mat-header-cell *matHeaderCellDef>Ações</th>
       <td mat-cell *matCellDef="let payment">
-        <button
-          mat-icon-button
-          (click)="updatePayment(payment)"
-          color="primary"
-        >
+        <button mat-icon-button (click)="updatePayment(payment)" color="basic">
           <mat-icon> edit</mat-icon>
         </button>
         <button
           mat-icon-button
           (click)="deletePayment(payment.id)"
-          color="primary"
+          color="basic"
         >
           <mat-icon>delete</mat-icon>
         </button>

@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { SessionGuard } from './guards/session.guard';
 import { AuthService } from './services/auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AuthService } from './services/auth.service';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [AuthService, SessionGuard],
   bootstrap: [AppComponent],

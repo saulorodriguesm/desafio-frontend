@@ -1,33 +1,37 @@
-.header-container {
-  width: 100%;
-  height: 90px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
+.header {
   background-color: rgb(35, 134, 98);
-  .header-container_welcome {
-    margin-left: 10px;
-    font-size: 20px;
-    font-weight: lighter;
-  }
-  .header-container_logout {
-    background-color: #fff;
-    color: rgb(35, 134, 98);
-    padding: 15px 30px;
-    font-size: 20px;
-
-    margin-right: 10px;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-  thead {
-    background-color: rgb(35, 134, 98);
+  display: flex;
+  justify-content: center;
+  .header-container {
+    width: 70%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: #fff;
+    .header-container_welcome {
+      margin-left: 10px;
+      font-size: 20px;
+      font-weight: lighter;
+    }
+    .header-container_logout {
+      background-color: #fff;
+      color: rgb(35, 134, 98);
+      padding: 15px 30px;
+      font-size: 20px;
+
+      margin-right: 10px;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    thead {
+      background-color: rgb(35, 134, 98);
+      color: #fff;
+    }
   }
 }
 .add-button_fixed {
@@ -36,6 +40,8 @@
   bottom: 25px;
 }
 .table {
+  width: 70%;
+  margin: 0 auto;
   padding: 10px;
   display: flex;
   justify-content: space-between;
