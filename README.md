@@ -46,3 +46,13 @@ Para o desenvolvimento do Modal responsável por adicionar novos itens na tabela
 Optei por desenvolver dois services, um de autenticação que será responsável por realizar a autenticação do usuário e salvar o `access-token` no localStorage e também pelo logout do mesmo.
 
 O segundo service batizado de payments.service.ts será responsável pelo CRUD, tendo como métodos as funções de consulta, atualização, inserção e exclusão.
+
+### Pontos de atenção
+
+Durante o desenvolvimento foi notado um erro de CORS que impediu que a consulta na API fosse realizada com sucesso, dessa maneira impossibilitando o carregamento das informações.
+
+**obs:** Deixo em aberto a possibilidade de ser falha humana por falta de conhecimento ou algo que esqueci durante o desenvolvimento, mas em minhas pesquisas a solução está no lado do backend o qual não possuo acesso.
+
+![Printscreen do erro apontado no console do browser](image.png)
+
+Por conta do erro acima, não pude desenvolver a páginação e nem o campo de busca solicitados no enunciado do desafio.

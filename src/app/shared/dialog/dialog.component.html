@@ -1,26 +1,31 @@
 <h1 mat-dialog-title>Inserir novo pagamento</h1>
 <div mat-dialog-content>
-  <mat-form-field>
+  <mat-form-field class="modal-input">
     <mat-label>Usuario</mat-label>
     <input matInput [(ngModel)]="data.username" />
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field class="modal-input">
     <mat-label>Titulo</mat-label>
     <input matInput [(ngModel)]="data.title" />
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="modal-input">
     <mat-label>Valor</mat-label>
     <input type="number" matInput [(ngModel)]="data.value" />
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field class="modal-input">
     <mat-label>Pago</mat-label>
     <input matInput [(ngModel)]="data.isPayed" />
   </mat-form-field>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancelar</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
+<div class="modal-button_container" mat-dialog-actions>
+  <button mat-button class="cancel" (click)="onCancel()">Cancelar</button>
+  <button
+    mat-button
+    class="button"
+    [mat-dialog-close]="data"
+    cdkFocusInitial
+  >
     Cadastrar
   </button>
 </div>
