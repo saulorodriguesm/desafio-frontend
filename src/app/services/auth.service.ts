@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable()
@@ -21,7 +21,7 @@ export class AuthService {
       );
       localStorage.setItem('@app/access_token', access_token);
     } catch {
-      alert('Credenciais invalidas');
+      alert('Ocorreu um erro na chamada da API');
     }
   }
 

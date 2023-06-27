@@ -8,10 +8,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class PaymentsService {
-  constructor(private _httpClient: HttpClient) {}
+  constructor(private _httpClient: HttpClient) {
+  }
 
   getPayments(): Observable<Payments[]> {
-    return this._httpClient.get<Payments[]>(API_PATH);
+    return this._httpClient.get<Payments[]>(
+      'https://3kniis.sse.codesandbox.io/payments',
+      { withCredentials: true }
+    );
   }
 
   addPayment(payment: Payments): Observable<Payments> {

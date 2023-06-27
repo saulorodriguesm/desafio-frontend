@@ -16,7 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { SessionGuard } from './guards/session.guard';
-import { AuthService } from './services/AuthService';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [

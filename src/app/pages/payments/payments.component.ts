@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { PaymentsService } from '../../services/PaymentsService';
+import { PaymentsService } from '../../services/payments.service';
 import { Payments } from 'src/app/models/Payments';
 import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTable } from '@angular/material/table';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payments',
@@ -16,23 +18,38 @@ export class PaymentsComponent implements OnInit {
   table!: MatTable<any>;
   constructor(
     private _paymentService: PaymentsService,
-    public dialog: MatDialog
+    private _authService: AuthService,
+    public dialog: MatDialog,
+    public router: Router
   ) {
     this._paymentService.getPayments().subscribe((data) => {
+      console.log('oi',data)
       this.payments = data;
     });
   }
 
-  payments: Payments[] = [];
+  payments: Payments[] = [
+    {
+      id: '',
+      username: 'saulorodm',
+      title: 'programador',
+      value: 3,
+      isPayed: true,
+    },
+  ];
   displayedColumns: string[] = [
     'username',
     'title',
-    'date',
     'value',
     'isPayed',
+    'actions',
   ];
   ngOnInit(): void {}
 
+  logout() {
+    this._authService.Logout();
+    this.router.navigate(['/login']);
+  }
   updatePayment(payment: Payments) {
     this.openDialog(payment);
     if (this.payments.map((p) => p.id).includes(payment.id)) {
@@ -46,7 +63,7 @@ export class PaymentsComponent implements OnInit {
   deletePayment(id: string) {}
   openDialog(payment: Payments | null) {
     const dialogRef = this.dialog.open(DialogComponent, {
-      width: '250px',
+      width: '450px',
       data:
         payment != null
           ? payment
