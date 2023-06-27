@@ -1,21 +1,34 @@
-<div class="login-container">
-  <form
-    class="form-container"
-    [formGroup]="loginForm"
-    (ngSubmit)="handleLogin()"
-  >
-    <div class="form-container_input">
-      <input placeholder="Digite seu usuario" formControlName="username" />
+<div class="page-container">
+  <div class="login-welcome">
+    <div>
+      <h1>Bem-vindo ao login!</h1>
+      <span>
+        Este é o desafio front-end do <b>PicPay</b>, espero que gostem</span
+      >
     </div>
-    <div class="form-container_input">
-      <input
-        placeholder="Digite sua senha"
-        formControlName="password"
-        type="password"
-      />
+  </div>
+  <div class="login-container">
+    <div class="login-container_wrapper">
+      <form
+        class="form-container"
+        [formGroup]="loginForm"
+        (ngSubmit)="handleLogin()"
+      >
+        <h2>Faça Seu Login</h2>
+        <div class="form-container_input">
+          <input placeholder="Digite seu usuario" formControlName="username" />
+        </div>
+        <div class="form-container_input">
+          <input
+            placeholder="Digite sua senha"
+            formControlName="password"
+            type="password"
+          />
+        </div>
+        <div class="form-container_button">
+          <button type="submit">Acessar</button>
+        </div>
+      </form>
     </div>
-    <div class="form-container_button">
-      <button type="submit">Acessar</button>
-    </div>
-  </form>
+  </div>
 </div>
