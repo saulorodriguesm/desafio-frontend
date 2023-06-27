@@ -19,7 +19,7 @@ export class AuthService {
           }
         )
       );
-      localStorage.setItem('Authorization', 'Bearer ' + access_token);
+      localStorage.setItem('Authorization', access_token);
     } catch {
       alert('Ocorreu um erro na chamada da API');
     }

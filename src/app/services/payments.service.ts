@@ -13,8 +13,17 @@ export class PaymentsService {
   getAll(): Observable<Payments[]> {
     return this._httpClient.get<Payments[]>(
       'https://3kniis.sse.codesandbox.io/payments',
-      { withCredentials: true }
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${this.getAccessToken()}`,
+        },
+      }
     );
+  }
+
+  getAccessToken() {
+    return localStorage.getItem('Authorization');
   }
 
   addPayment(payment: Payments): Observable<Payments> {

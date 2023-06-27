@@ -39,7 +39,7 @@ export class PaymentsComponent implements OnInit {
       title: 'nutricionista',
       value: 7,
       isPayed: true,
-    }
+    },
   ];
   displayedColumns: string[] = [
     'username',
@@ -55,9 +55,9 @@ export class PaymentsComponent implements OnInit {
     this.router.navigate(['/login']);
   }
   getPayments(): void {
-    this._paymentService
-      .getAll()
-      .subscribe((payments) => (this.payments = payments));
+    this._paymentService.getAll().subscribe((payments) => {
+      this.payments = payments;
+    });
   }
   updatePayment(payment: Payments) {
     this.openDialog(payment);

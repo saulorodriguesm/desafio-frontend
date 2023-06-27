@@ -2,6 +2,10 @@
 
 Projeto desenvolvido como parte do processo seletivo para a vaga de Desenvolvedor Front-end Angular do PicPay por [Saulo Martins](https://www.linkedin.com/in/saulorodriguesm/)
 
+
+### Apresentação
+Neste desafio optei por tentar fazer uma aplicação direta ao ponto que seria a autenticação segura e um CRUD funcional. Enfrentei alguns diversos problemas com o manejo da API disponibilizada com problemas de instabilidade e de CORS. Mas no geral fiquei satisfeito com o meu projeto, apesar de estar longe de 100% finalizado e cumprindo todos os requisitos, foi possível demonstrar minhas skills em pequenas partes do projeto. Como a utilização de requisições, libs externas do Angular, pré-processadores, padrões de commit, organização de projeto dentre outros, fico aberto para conversarmos a respeito desta aplicação.
+
 ### Como acessar o dashboard?
 
 A aplicação está disponível em produção no link [Desafio Front-End](https://desafio-frontend-v2.vercel.app)
@@ -22,6 +26,9 @@ Rode o comando `ng s` e a aplicação será inicializada em `http://localhost:42
 ### Para rodar os testes unitários
 
 Rode o comando `ng test` para rodar os testes unitários já existentes na criação de um projeto Angular 2+ com o [Karma](https://karma-runner.github.io).
+
+### Pré-processadores CSS
+Optei por utilizar o SASS por ter uma bagagem utilizando o mesmo e também por preferência quando comparado aos outros sugerios pelo Angular.
 
 ### Componentes desenvolvidos
 
